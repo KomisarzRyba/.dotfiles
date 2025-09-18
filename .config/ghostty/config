@@ -1,0 +1,11 @@
+theme = Black Metal (Gorgoroth)
+font-family = Zenbones Mono
+background-opacity = 0.85
+
+window-width = 1280
+window-height = 720
+
+font-size = 16
+window-inherit-font-size = false
+
+macos-titlebar-style = hidden
