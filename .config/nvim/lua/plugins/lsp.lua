@@ -73,7 +73,10 @@ local servers = {
 				exportPdf = "onType",
 			}
 		},
-	}
+	},
+
+	-- docker
+	docker_language_server = {},
 }
 
 
