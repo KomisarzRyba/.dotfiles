@@ -64,6 +64,14 @@ vim.opt.updatetime = 250
 
 vim.g.root_spec = { "cwd" }
 
+vim.api.nvim_create_autocmd('TextYankPost', {
+	desc = 'Highlight on yank',
+	group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
+
 -- Setup lazy.nvim
 require('lazy').setup {
 	spec = {
