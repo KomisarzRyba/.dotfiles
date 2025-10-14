@@ -1,78 +1,78 @@
 return {
-	'nvim-telescope/telescope.nvim',
-	branch = '0.1.x',
+	"nvim-telescope/telescope.nvim",
+	branch = "0.1.x",
 	dependencies = {
-		'nvim-lua/plenary.nvim',
+		"nvim-lua/plenary.nvim",
 		{
-			'nvim-telescope/telescope-fzf-native.nvim',
-			build = 'make',
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
+			config = function()
+				require("telescope").load_extension("fzf")
+			end,
 		},
-		'nvim-telescope/telescope-ui-select.nvim',
+		{
+			"nvim-telescope/telescope-ui-select.nvim",
+			config = function()
+				require("telescope").load_extension("ui-select")
+			end,
+		},
 	},
 	config = function()
-		local telescope = require 'telescope'
-		local actions = require 'telescope.actions'
-		local themes = require 'telescope.themes'
+		local telescope = require("telescope")
+		local actions = require("telescope.actions")
+		local themes = require("telescope.themes")
 
-		telescope.setup {
+		telescope.setup({
 			extensions = {
-				['ui-select'] = {
+				["ui-select"] = {
 					themes.get_dropdown(),
 				},
 			},
 			defaults = {
-				file_ignore_patterns = { 'node_modules' },
+				file_ignore_patterns = { "node_modules" },
 				mappings = {
 					i = {
-						['<esc>'] = actions.close,
+						["<esc>"] = actions.close,
 					},
 				},
 			},
-		}
-
-		telescope.load_extension 'fzf'
-		telescope.load_extension 'ui-select'
+		})
 	end,
 	keys = {
 		{
-			'<leader>sf',
-			function()
-				require('telescope.builtin').find_files()
-			end,
-			desc = '[S]earch [f]iles',
+			"<leader>sf",
+			"<cmd>Telescope find_files<cr>",
+			desc = "[S]earch [f]iles",
 		},
 		{
-			'<leader>sh',
-			function()
-				require('telescope.builtin').help_tags()
-			end,
-			desc = '[S]earch [h]elp',
+			"<leader>sh",
+			"<cmd>Telescope help_tags<cr>",
+			desc = "[S]earch [h]elp",
 		},
 		{
-			'<leader>sg',
-			function()
-				require('telescope.builtin').live_grep()
-			end,
-			desc = '[S]earch [g]rep',
+			"<leader>sg",
+			"<cmd>Telescope live_grep<cr>",
+			desc = "[S]earch [g]rep",
 		},
 		{
-			'<leader>sw',
-			require('telescope.builtin').grep_string,
-			desc = '[S]earch for current [w]ord',
+			"<leader>sw",
+			"<cmd>Telescope grep_string<cr>",
+			desc = "[S]earch for current [w]ord",
 		},
 		{
-			'<leader>sd',
-			require('telescope.builtin').diagnostics,
-			desc = '[S]earch [d]iagnostics',
+			"<leader>sd",
+			"<cmd>Telescope diagnostics<cr>",
+			desc = "[S]earch [d]iagnostics",
 		},
 		{
-			'<leader>ss',
-			require('telescope.builtin').lsp_document_symbols,
+			"<leader>ss",
+			"<cmd>Telescope lsp_document_symbols<cr>",
+			desc = "[S]earch [s]ymbols in current buffer",
 		},
 		{
-			'<leader>sk',
-			require('telescope.builtin').keymaps,
-			desc = '[S]earch [k]eymaps',
+			"<leader>sk",
+			"<cmd>Telescope keymaps<cr>",
+			desc = "[S]earch [k]eymaps",
 		},
 	},
 }

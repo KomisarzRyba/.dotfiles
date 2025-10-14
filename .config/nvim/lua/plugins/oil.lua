@@ -1,5 +1,5 @@
 return {
-	'stevearc/oil.nvim',
+	"stevearc/oil.nvim",
 	lazy = false,
 	---@module 'oil'
 	---@type oil.SetupOpts
@@ -9,10 +9,10 @@ return {
 	},
 	keys = {
 		{
-			'-',
-			':Oil<CR>',
-			mode = 'n',
-			desc = 'Toggle file explorer',
+			"-",
+			":Oil<CR>",
+			mode = "n",
+			desc = "Toggle file explorer",
 		},
 	},
 }
