@@ -1,6 +1,7 @@
 local formatters = {
 	lua = { "stylua" },
 	go = { "goimports", "golines", "gofumpt" },
+	html = { "superhtml fmt" },
 }
 
 return {
