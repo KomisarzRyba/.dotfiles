@@ -90,3 +90,5 @@ alias tn='tmux new -s $(basename $PWD)'
 # ENVIRONMENT
 export FZF_DEFAULT_OPTS='--color=16'
 export TINTED_TMUX_OPTION_STATUSBAR=1
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
