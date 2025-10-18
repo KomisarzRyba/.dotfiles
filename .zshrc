@@ -92,3 +92,5 @@ export FZF_DEFAULT_OPTS='--color=16'
 export TINTED_TMUX_OPTION_STATUSBAR=1
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
