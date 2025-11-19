@@ -1,7 +1,13 @@
 local formatters = {
 	lua = { "stylua" },
 	go = { "goimports", "golines", "gofumpt" },
-	html = { "superhtml fmt" },
+	html = { "prettier", "djlint" },
+	javascript = { "prettier" },
+	javascriptreact = { "prettier" },
+	typescript = { "prettier" },
+	typescriptreact = { "prettier" },
+	css = { "prettier" },
+	json = { "prettier" },
 }
 
 return {

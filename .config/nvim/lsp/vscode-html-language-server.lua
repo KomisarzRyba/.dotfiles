@@ -5,6 +5,6 @@ vim.filetype.add({
 })
 
 return {
-	cmd = { "superhtml", "lsp" },
+	cmd = { "vscode-html-language-server", "--stdio" },
 	filetypes = { "html" },
 }

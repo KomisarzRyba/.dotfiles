@@ -7,9 +7,8 @@ vim.filetype.add({
 	},
 })
 
-print(vim.inspect(vim.filetype.match({ filename = "template.html" })))
-
 return {
 	cmd = { "jinja-lsp", "--stdio" },
 	filetypes = { "jinja", "html" },
+	root_markers = { ".git" },
 }
