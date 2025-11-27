@@ -87,6 +87,9 @@ zinit cdreplay -q
 alias c='clear'
 alias tn='tmux new -s $(basename $PWD)'
 
+export TUNE_ALIASES=$HOME/.tune/aliases
+source $TUNE_ALIASES
+
 # ENVIRONMENT
 export FZF_DEFAULT_OPTS='--color=16'
 export TINTED_TMUX_OPTION_STATUSBAR=1
