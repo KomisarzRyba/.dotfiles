@@ -1,5 +1,5 @@
 nodejs 22.14.0
-golang 1.25.1
+golang 1.25.4
 rye 0.43.0
 java openjdk-21.0.2
 ruff 0.9.6
