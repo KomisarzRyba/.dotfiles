@@ -77,6 +77,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(mise activate zsh)"
 
 # COMPINIT
 autoload -U compinit && compinit
