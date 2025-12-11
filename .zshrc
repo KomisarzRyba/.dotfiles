@@ -38,7 +38,6 @@ function omzp() {
 }
 
 # oh-my-zsh plugins
-omzp asdf
 omzp git
 omzp gh
 omzp brew
@@ -78,7 +77,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
-source ${ASDF_DATA_DIR:-$HOME/.asdf}/plugins/golang/set-env.zsh
 
 # COMPINIT
 autoload -U compinit && compinit
@@ -96,4 +94,3 @@ export FZF_DEFAULT_OPTS='--color=16'
 export TINTED_TMUX_OPTION_STATUSBAR=1
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-export GOROOT=$(asdf where golang)/go
