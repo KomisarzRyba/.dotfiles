@@ -51,7 +51,7 @@ vim.opt.hlsearch = true
 vim.keymap.set('n', '<esc>', '<cmd>nohlsearch<CR>')
 
 -- Update time
-vim.opt.updatetime = 250
+vim.opt.updatetime = 100
 
 -- Root spec
 vim.g.root_spec = { "cwd" }

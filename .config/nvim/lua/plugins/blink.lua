@@ -8,7 +8,7 @@ return {
 		keymap = { preset = "super-tab" },
 		completion = { documentation = { auto_show = true } },
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer" },
+			default = { "lsp", "snippets", "buffer", "path" },
 		},
 		signature = { enabled = true },
 	},
