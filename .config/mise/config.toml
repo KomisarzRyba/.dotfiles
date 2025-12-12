@@ -1,0 +1,7 @@
+[tools]
+go = "latest"
+gofumpt = "latest"
+golines = "latest"
+lua-language-server = "latest"
+stylua = "latest"
+uv = "latest"
