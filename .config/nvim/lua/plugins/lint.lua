@@ -5,10 +5,6 @@ return {
 		linters_by_ft = {
 			fish = { "fish" },
 			python = { "ruff" },
-			javascript = { "eslint" },
-			typescript = { "eslint" },
-			javascriptreact = { "eslint" },
-			typescriptreact = { "eslint" },
 			go = { "golangcilint" },
 			-- Use the "*" filetype to run linters on all filetypes.
 			-- ['*'] = { 'global linter' },
