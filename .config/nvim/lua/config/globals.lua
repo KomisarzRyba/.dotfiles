@@ -8,7 +8,7 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
 
 -- Border style
-vim.o.winborder = 'rounded'
+vim.o.winborder = 'none'
 
 -- Font
 vim.g.have_nerd_font = true
