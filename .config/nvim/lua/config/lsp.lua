@@ -7,6 +7,8 @@ local servers = {
 	"tailwindcss",
 	"taplo",
 	"ts_ls",
+	"eslint",
+	"jsonls",
 }
 
 vim.lsp.enable(servers)
