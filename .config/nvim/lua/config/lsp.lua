@@ -1,6 +1,7 @@
 local servers = {
 	"basedpyright",
 	"gopls",
+	"golangci_lint_ls",
 	"lua_ls",
 	"ruff",
 	"rust_analyzer",

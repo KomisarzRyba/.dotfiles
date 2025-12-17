@@ -1,6 +1,8 @@
 [tools]
 go = "latest"
 gofumpt = "latest"
+golangci-lint = "2.7.2"
+golangci-lint-langserver = "0.0.11"
 golines = "latest"
 lua-language-server = "latest"
 stylua = "latest"
