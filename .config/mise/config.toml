@@ -1,9 +1,11 @@
 [tools]
-go = "latest"
+go = "1.25.5"
 gofumpt = "latest"
 golangci-lint = "2.7.2"
 golangci-lint-langserver = "0.0.11"
 golines = "latest"
 lua-language-server = "latest"
+ruff = "0.14.9"
 stylua = "latest"
 uv = "latest"
+watchexec = "latest"
