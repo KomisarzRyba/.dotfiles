@@ -1,5 +1,5 @@
 local servers = {
-	"basedpyright",
+	"pyright",
 	"gopls",
 	"golangci_lint_ls",
 	"lua_ls",
