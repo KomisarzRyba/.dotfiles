@@ -8,6 +8,7 @@ local formatters = {
 	typescriptreact = { "prettier" },
 	css = { "prettier" },
 	json = { "prettier" },
+	templ = { "templ" },
 }
 
 return {

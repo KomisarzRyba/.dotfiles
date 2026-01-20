@@ -10,6 +10,8 @@ local servers = {
 	"ts_ls",
 	"eslint",
 	"jsonls",
+	"zls",
+	"templ",
 }
 
 vim.lsp.enable(servers)

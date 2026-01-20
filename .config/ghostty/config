@@ -1,11 +1,9 @@
 theme = Zenbones Dark
-font-family = Zenbones Mono
-background-opacity = 0.97
+font-family = IosevkaTerm NFM
+background-opacity = 0.9
+background-blur-radius = 100
 
-window-width = 1280
-window-height = 720
-
-font-size = 16
+font-size = 18
 window-inherit-font-size = false
 
 macos-titlebar-style = hidden
