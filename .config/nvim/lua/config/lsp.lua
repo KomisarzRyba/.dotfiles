@@ -12,6 +12,7 @@ local servers = {
 	"jsonls",
 	"zls",
 	"templ",
+	"tinymist",
 }
 
 vim.lsp.enable(servers)
