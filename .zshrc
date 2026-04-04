@@ -91,6 +91,7 @@ export TUNE_ALIASES=$HOME/.tune/aliases
 source $TUNE_ALIASES
 
 # ENVIRONMENT
+export EDITOR='nvim'
 export FZF_DEFAULT_OPTS='--color=16'
 export TINTED_TMUX_OPTION_STATUSBAR=1
 export BUN_INSTALL="$HOME/.bun"
