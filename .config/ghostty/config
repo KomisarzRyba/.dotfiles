@@ -1,7 +1,7 @@
 theme = Zenbones Dark
 font-family = IosevkaTerm NFM
 background-opacity = 0.9
-background-blur-radius = 100
+background-blur = macos-glass-regular
 
 font-size = 18
 window-inherit-font-size = false
