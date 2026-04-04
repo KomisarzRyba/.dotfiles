@@ -9,6 +9,7 @@ local formatters = {
 	css = { "prettier" },
 	json = { "prettier" },
 	templ = { "templ" },
+	rust = { "rustfmt" },
 }
 
 return {
