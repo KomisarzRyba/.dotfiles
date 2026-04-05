@@ -1,7 +1,7 @@
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
+bindkey -M viins '^p' history-search-backward
+bindkey -M viins '^n' history-search-forward
 
-bindkey '^y' autosuggest-accept
+bindkey -M viins '^y' autosuggest-accept
 
 bindkey -v '^?' backward-delete-char
 bindkey -v '^h' backward-delete-char
