@@ -1,7 +1,7 @@
 ZSH_ALIAS_FILE="${0:A}"
 
 alias c="clear"
-alias tn="tmux new -s $(basename $PWD)"
+alias tn='tmux new -s $(basename $PWD)'
 alias grep="rg --color=auto"
 alias eza="eza --icons=auto --color=auto"
 alias ls="eza"
@@ -16,3 +16,4 @@ alias lg="lazygit"
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
 alias gp="git push"
 alias gl="git pull"
+alias tl="tmux ls"

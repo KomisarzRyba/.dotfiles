@@ -14,7 +14,8 @@ _alias_list() {
         local name="${line%%=*}"
         name="${name#alias }"
         local cmd="${line#*=}"
-        cmd="${cmd#\"}"; cmd="${cmd%\"}"
+        cmd="${cmd#[\"\']}"
+        cmd="${cmd%[\"\']}"
         names+=("$name"); cmds+=("$cmd")
         (( ${#name} > maxlen )) && maxlen=${#name}
     done < <(grep '^alias ' "$ALIAS_FILE")
@@ -39,31 +40,36 @@ _alias_add() {
     local cmd=$(gum input --header "Aliasing $(gum style --bold "$name")" --placeholder "command (e.g. git status)")
     [[ -z "$cmd" ]] && return 1
 
-    echo "alias ${name}=\"${cmd}\"" >> "$ALIAS_FILE"
+    local q='"'
+    [[ "$cmd" == *'$'* || "$cmd" == *'`'* ]] && q="'"
+    echo "alias ${name}=${q}${cmd}${q}" >> "$ALIAS_FILE"
     gum log --level info "Added: ${name} → ${cmd}"
     source "$ALIAS_FILE"
 }
 
 _alias_edit() {
-    local aliases=("${(@f)$(grep '^alias ' "$ALIAS_FILE" | sed 's/^alias //' | sed "s/=/ → /" | sed 's/"//g')}")
+    local aliases=("${(@f)$(grep '^alias ' "$ALIAS_FILE" | sed 's/^alias //' | sed "s/=/ → /" | sed "s/ → [\"']/ → /; s/[\"']$//")}")
     [[ ${#aliases[@]} -eq 0 ]] && { gum log --level warn "No aliases to edit."; return 1; }
 
     local choice=$(printf '%s\n' "${aliases[@]}" | gum filter --placeholder "Select alias to edit")
     [[ -z "$choice" ]] && return 1
 
     local name="${choice%% →*}"
-    local old_cmd=$(grep "^alias ${name}=" "$ALIAS_FILE" | head -1 | sed "s/^alias ${name}=\"//" | sed 's/"$//')
+    local raw_line=$(grep "^alias ${name}=" "$ALIAS_FILE" | head -1)
+    local quote_char="${raw_line#alias ${name}=}"
+    quote_char="${quote_char:0:1}"
+    local old_cmd=$(echo "$raw_line" | sed "s/^alias ${name}=[\"']//" | sed "s/[\"']$//")
 
     local new_cmd=$(gum input --header "Editing $(gum style --bold "$name")" --value "$old_cmd" --placeholder "new command")
     [[ -z "$new_cmd" || "$new_cmd" == "$old_cmd" ]] && return 0
 
-    sed -i '' "s|^alias ${name}=.*|alias ${name}=\"${new_cmd}\"|" "$ALIAS_FILE"
+    sed -i '' "s|^alias ${name}=.*|alias ${name}=${quote_char}${new_cmd}${quote_char}|" "$ALIAS_FILE"
     gum log --level info "Updated: ${name} → ${new_cmd}"
     source "$ALIAS_FILE"
 }
 
 _alias_remove() {
-    local aliases=("${(@f)$(grep '^alias ' "$ALIAS_FILE" | sed 's/^alias //' | sed "s/=/ → /" | sed 's/"//g')}")
+    local aliases=("${(@f)$(grep '^alias ' "$ALIAS_FILE" | sed 's/^alias //' | sed "s/=/ → /" | sed "s/ → [\"']/ → /; s/[\"']$//")}")
     [[ ${#aliases[@]} -eq 0 ]] && { gum log --level warn "No aliases to remove."; return 1; }
 
     local choice=$(printf '%s\n' "${aliases[@]}" | gum filter --placeholder "Select alias to remove")
