@@ -13,6 +13,7 @@ local servers = {
 	"zls",
 	"templ",
 	"tinymist",
+	"bashls",
 }
 
 vim.lsp.enable(servers)
