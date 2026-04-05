@@ -1,15 +1,16 @@
 ZSH_ALIAS_FILE="${0:A}"
 
-alias c='clear'
-alias tn='tmux new -s $(basename $PWD)'
-alias grep='rg --color=auto'
-alias eza='eza --icons=auto --color=auto'
-alias ls='eza'
-alias ll='eza -l'
-alias la='eza -la'
-alias lt='eza --tree'
-alias gs='git status'
-alias gss='git status --short'
-alias ta='tmux attach'
-alias gd='git diff'
-alias lg='lazygit'
+alias c="clear"
+alias tn="tmux new -s $(basename $PWD)"
+alias grep="rg --color=auto"
+alias eza="eza --icons=auto --color=auto"
+alias ls="eza"
+alias ll="eza -l"
+alias la="eza -la"
+alias lt="eza --tree"
+alias gs="git status"
+alias gss="git status --short"
+alias ta="tmux attach"
+alias gd="git diff"
+alias lg="lazygit"
+alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
