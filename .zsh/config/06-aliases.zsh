@@ -17,3 +17,4 @@ alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%
 alias gp="git push"
 alias gl="git pull"
 alias tl="tmux ls"
+alias gf="git fetch"
