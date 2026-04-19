@@ -4,6 +4,9 @@ export EDITOR='nvim'
 
 export TINTED_TMUX_OPTION_STATUSBAR=1
 
+BUN_BIN="$HOME/.bun/bin"
+export PATH="$BUN_BIN:$PATH"
+
 export GUM_FORMAT_THEME="$HOME/.zsh/gum-theme.json"
 export GUM_INPUT_CURSOR_FOREGROUND="#6099c0"
 export GUM_INPUT_PROMPT_FOREGROUND="#819b69"
