@@ -22,3 +22,4 @@ alias glg="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d
 alias tns="tmux new -s"
 alias tat='tmux attach -t `tmux ls | gum choose | cut -d ':' -f 1 -`'
 alias python="uv run python"
+alias gds="git diff --staged"
